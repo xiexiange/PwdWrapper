@@ -12,9 +12,27 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+
+            manifestPlaceholders = [
+                    //AZ1EUL866WME 属于应用"密码帮"独有的 Android AppKey, 用于配置SDK
+                    MTA_APPKEY:"AZ1EUL866WME",
+                    //标注应用推广渠道用以区分新用户来源，可填写如应用宝，豌豆荚等
+                    MTA_CHANNEL:"HuaWeiN"
+            ]
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+
+            manifestPlaceholders = [
+                    //AZ1EUL866WME 属于应用"密码帮"独有的 Android AppKey, 用于配置SDK
+                    MTA_APPKEY:"AZ1EUL866WME",
+                    //标注应用推广渠道用以区分新用户来源，可填写如应用宝，豌豆荚等
+                    MTA_CHANNEL:"HuaWeiN"
+            ]
         }
     }
     compileOptions {
@@ -33,4 +51,9 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.android.support:design:28.0.0'
+
+    //MTA主包
+    implementation 'com.qq.mta:mta:3.4.2'
+    //MID基础包
+    implementation 'com.tencent.mid:mid:3.73-release'
 }
