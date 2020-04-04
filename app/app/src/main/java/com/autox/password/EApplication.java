@@ -17,9 +17,6 @@ public class EApplication extends Application {
         mContext = this;
         PrefUtil.getInstance().init(this);
         CrashReport.initCrashReport(getApplicationContext(), "b57fe81771", BuildConfig.DEBUG);
-        if (PrefUtil.getLong(SharedPrefKeys.KEY_FIRST_INSTALL_TIME, -1L) == -1L) {
-            PrefUtil.setLong(SharedPrefKeys.KEY_FIRST_INSTALL_TIME, System.currentTimeMillis());
-        }
         BaseUtil.getInstance().setImpl(new BaseUtil.IImpl() {
             @Override
             public Context getContext() {
