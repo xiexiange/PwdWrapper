@@ -14,6 +14,12 @@
         android:name="BUGLY_APP_VERSION"
         android:value="\ 1002_200326"
         />
+
+    <meta-data android:name="TA_APPKEY" android:value="Aqc1110263771" />
+    <!-- 请将CHANNAL改为app的发布渠道  -->
+    <meta-data  android:name="InstallChannel" android:value="HuaWeiN" />
+    <!-- mta系统的权限 -->
+
     <application
         android:name=".EApplication"
         android:allowBackup="true"
@@ -42,5 +48,5 @@
         </provider>
     </application>
 
-
-</manifest>
+    
+    </manifest>

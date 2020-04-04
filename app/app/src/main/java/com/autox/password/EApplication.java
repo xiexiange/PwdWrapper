@@ -7,6 +7,7 @@ import com.autox.base.BaseUtil;
 import com.autox.base.PrefUtil;
 import com.autox.module.localdata.sharedprefs.SharedPrefKeys;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.tencent.stat.StatService;
 
 public class EApplication extends Application {
     private static Context mContext;
@@ -17,6 +18,7 @@ public class EApplication extends Application {
         mContext = this;
         PrefUtil.getInstance().init(this);
         CrashReport.initCrashReport(getApplicationContext(), "b57fe81771", BuildConfig.DEBUG);
+        StatService.trackCustomEvent(this, "onCreate", "");
         BaseUtil.getInstance().setImpl(new BaseUtil.IImpl() {
             @Override
             public Context getContext() {
