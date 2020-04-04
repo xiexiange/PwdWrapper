@@ -79,7 +79,7 @@ public class SplashActivity extends Activity implements SplashADListener {
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED){
+                != PackageManager.PERMISSION_GRANTED){
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
             }
         }
