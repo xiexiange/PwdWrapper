@@ -77,12 +77,6 @@ public class SplashActivity extends Activity implements SplashADListener {
             // 如果是Android6.0以下的机器，默认在安装时获得了所有权限，可以直接调用SDK
             fetchSplashAD(this, container, skipView, AD_CONSTANT.GDT_APP_ID, getPosId(), this, 0);
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED){
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
-            }
-        }
     }
 
     private String getPosId() {
