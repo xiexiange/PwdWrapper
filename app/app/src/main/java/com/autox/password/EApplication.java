@@ -8,6 +8,8 @@ import com.autox.base.PrefUtil;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.stat.StatService;
 
+import java.util.Properties;
+
 public class EApplication extends Application {
     private static Context mContext;
 
@@ -29,6 +31,13 @@ public class EApplication extends Application {
             @Override
             public String getApplicationID() {
                 return BuildConfig.APPLICATION_ID;
+            }
+
+            @Override
+            public void recordUsage(String key, String value) {
+                Properties prop = new Properties();
+                prop.setProperty("value", value);
+                StatService.trackCustomKVEvent(EApplication.this, key, prop);
             }
         });
     }
