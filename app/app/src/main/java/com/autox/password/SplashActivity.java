@@ -80,10 +80,6 @@ public class SplashActivity extends Activity implements SplashADListener {
     }
 
     private String getPosId() {
-        if (PrefUtil.getBoolean(PrefConst.KEY_IS_NEWER, true)) {
-            PrefUtil.setBoolean(PrefConst.KEY_IS_NEWER, false);
-            return "";
-        }
         return AD_CONSTANT.GDT_SPLASH_AD_ID;
 //        String posId = getIntent().getStringExtra("pos_id");
 //        return TextUtils.isEmpty(posId) ? Constant.SplashPosID : posId;
