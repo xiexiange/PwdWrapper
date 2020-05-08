@@ -12,7 +12,7 @@
 
     <meta-data
         android:name="BUGLY_APP_VERSION"
-        android:value="\ 1004_200406"
+        android:value="\ 1005_200508"
         />
 
 <!--    <meta-data android:name="TA_APPKEY" android:value="AZ1EUL866WME" />-->
