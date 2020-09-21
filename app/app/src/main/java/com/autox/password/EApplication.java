@@ -5,6 +5,8 @@ import android.content.Context;
 
 import com.autox.base.BaseUtil;
 import com.autox.base.PrefUtil;
+import com.autox.password.ads.AdUtils;
+import com.miui.zeus.mimo.sdk.MimoSdk;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.stat.StatService;
 
@@ -40,6 +42,9 @@ public class EApplication extends Application {
                 StatService.trackCustomKVEvent(EApplication.this, key, prop);
             }
         });
+        // 小米广告
+        MimoSdk.init(this, AdUtils.MI_AD.getAppId()); // false
+        // end 小米广告
     }
 
     public static Context getContext() {
